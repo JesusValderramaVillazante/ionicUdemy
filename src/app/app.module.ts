@@ -10,6 +10,8 @@ import { TerminadosPage } from '../pages/terminados/terminados';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { DeseosService } from '../services/deseos.service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -30,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   providers: [
     StatusBar,
+    DeseosService,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
