@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DeseosService } from '../../services/deseos.service';
+import { Lista } from '../../models';
 
 @Component({
   selector: 'page-terminados',
@@ -6,7 +8,11 @@ import { Component } from '@angular/core';
 })
 export class TerminadosPage {
 
-  constructor() {
+  constructor(public deseosService: DeseosService) {
 
+  }
+
+  listaSeleccionada(lista: Lista) {
+    console.log(lista);
   }
 }
