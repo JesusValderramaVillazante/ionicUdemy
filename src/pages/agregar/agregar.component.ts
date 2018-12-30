@@ -30,4 +30,8 @@ export class AgregarPage {
     public actualizarTarea(item: ListaItem){
         item.completado = !item.completado;
     }
+
+    public borrar(index: number): void{
+        this.lista.items.splice(index, 1);
+    }
 }
