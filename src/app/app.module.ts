@@ -8,6 +8,8 @@ import { PendientesPage } from '../pages/pendientes/pendientes';
 import { TerminadosPage } from '../pages/terminados/terminados';
 import { AgregarPage } from '../pages/agregar/agregar.component'
 
+import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completado';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -19,7 +21,8 @@ import { DeseosService } from '../services/deseos.service';
     TabsPage,
     PendientesPage,
     TerminadosPage,
-    AgregarPage
+    AgregarPage,
+    FiltroCompletadoPipe
   ],
   imports: [
     BrowserModule,
