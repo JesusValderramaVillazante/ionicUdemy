@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DeseosService } from '../../services/deseos.service';
 import { Lista } from '../../models';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { AgregarPage } from '../agregar/agregar.component';
 
 @Component({
@@ -12,7 +12,8 @@ export class PendientesPage {
 
   constructor(
     public deseosService: DeseosService,
-    private navCtrl: NavController) {
+    private navCtrl: NavController,
+    private alertCtrl: AlertController ) {
   
   }
 
@@ -21,6 +22,25 @@ export class PendientesPage {
   }
 
   public agregarLista(): void {
-    this.navCtrl.push(AgregarPage);
+    const alerta = this.alertCtrl.create({
+      title: 'Nueva lista',
+      message: 'Nombre de la nueva lista que desea',
+      inputs: [{
+        name: 'titulo',
+        placeholder: 'Nombre de la lista'
+      }],
+      buttons: [{
+        text: 'Cancelar',
+      },{
+        text: 'Agregar',
+        handler: data => {
+          if (data.titulo.length === 0) {
+            return;
+          }
+          this.navCtrl.push(AgregarPage, {titulo: data.titulo});
+        }
+      }]
+    });
+    alerta.present();
   }
 }
