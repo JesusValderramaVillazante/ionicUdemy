@@ -43,4 +43,8 @@ export class PendientesPage {
     });
     alerta.present();
   }
+
+  public borrarLista(lista: Lista): void{
+    this.deseosService.borrarList(lista);
+  }
 }

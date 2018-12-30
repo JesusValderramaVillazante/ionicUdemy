@@ -28,4 +28,12 @@ export class DeseosService {
             this.listas = JSON.parse(localStorage.getItem('data'));
         }
     }
+
+    public borrarList(lista: Lista): void {
+        this.listas = this.listas.filter( listaData => {
+            return listaData.id !== lista.id;
+        });
+
+        this.guardarStorage();
+    }
 }
