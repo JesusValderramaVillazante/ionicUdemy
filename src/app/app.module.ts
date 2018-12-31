@@ -7,6 +7,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PendientesPage } from '../pages/pendientes/pendientes';
 import { TerminadosPage } from '../pages/terminados/terminados';
 import { AgregarPage } from '../pages/agregar/agregar.component'
+import { ListasComponent } from '../components/listas.component';
 
 import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completado';
 
@@ -22,7 +23,8 @@ import { DeseosService } from '../services/deseos.service';
     PendientesPage,
     TerminadosPage,
     AgregarPage,
-    FiltroCompletadoPipe
+    FiltroCompletadoPipe,
+    ListasComponent
   ],
   imports: [
     BrowserModule,
